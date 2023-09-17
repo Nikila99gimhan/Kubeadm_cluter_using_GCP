@@ -1,4 +1,4 @@
-Certainly! Below is a step-by-step guide for starting with a free tier account in GCP, installing the GCP SDK, and setting up the environment to create a Kubernetes cluster using `kubeadm`:
+ Below is a step-by-step guide for starting with a free tier account in GCP, installing the GCP SDK, and setting up the environment to create a Kubernetes cluster using `kubeadm`:
 
 ---
 
