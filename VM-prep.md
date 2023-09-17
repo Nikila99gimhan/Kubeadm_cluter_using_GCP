@@ -82,3 +82,30 @@ sudo systemctl enable containerd
 3. Repeat the above steps for each VM.
 
 Ensure that you have password-less SSH set up, or you will be prompted for a password for each VM. Also, replace `username`, `your_VM_IP`, and `/path/to/directory/` with the appropriate values for your setup.
+
+
+---
+
+## Summary and Rationale of the VM Preparation
+
+In our quest to set up a Kubernetes cluster, we've just executed a series of steps to prime our VMs for Kubernetes. Let's reflect on the significance of what we've accomplished:
+
+- **Operating System Update:** Keeping the OS updated ensures we are working with the latest patches and security updates. This step is crucial for the overall health and security of our infrastructure.
+
+- **Linux Swap Disablement:** Kubernetes works best when the swap is disabled. Swap can affect the performance and proper functioning of pods within a Kubernetes node. Disabling it aligns with the Kubernetes best practices.
+
+- **Kernel Modules Configuration:** Overlay and bridge network filters (br_netfilter) are vital for containers' networking functionalities. Enabling these modules makes sure that Kubernetes pods can communicate seamlessly.
+
+- **Sysctl Parameter Setting:** By setting certain network parameters at the kernel level, we are ensuring a consistent and stable networking environment for our containers. This aids in the proper functioning of the Cluster Network Interface (CNI) plugins used by Kubernetes.
+
+- **Containerd Installation:** Containerd is a lightweight container runtime. By having this in our VMs, we ensure that our Kubernetes setup can spin up and manage containers efficiently. The choice of container runtime can influence performance, security, and compatibility.
+
+- **Runc Installation:** Runc is the CLI tool for spawning and running containers according to the OCI specification. It's pivotal for the container runtime (like containerd) to manage the complete container lifecycle.
+
+- **Containerd Configuration and Service Setup:** By configuring and setting up containerd as a service, we're making sure that the container runtime is always available. This guarantees that Kubernetes can consistently and reliably start containers on demand.
+
+- **Systemd Control Group Enablement for Containerd:** Systemd cgroup driver is recommended, especially if you use cgroup v2. This allows Kubernetes to better manage and monitor system resources, ensuring optimal resource allocation and utilization.
+
+In essence, these preparations ensure that our VMs are not only compatible with Kubernetes but are also optimized for performance, security, and stability. Every step paves the way for a smoother Kubernetes deployment and operation. By understanding and implementing these foundational configurations, we're setting the stage for a robust and efficient Kubernetes cluster.
+
+---
