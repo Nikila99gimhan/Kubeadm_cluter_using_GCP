@@ -187,3 +187,8 @@ Explanation:
 
 ---
 
+<div align="center">
+  <a href="./next-page.md" style="padding: 10px 15px; background-color: #4CAF50; color: white; text-decoration: none; border-radius: 4px;">Next Page ➡️</a>
+</div>
+
+
