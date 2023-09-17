@@ -106,6 +106,5 @@ In our quest to set up a Kubernetes cluster, we've just executed a series of ste
 
 - **Systemd Control Group Enablement for Containerd:** Systemd cgroup driver is recommended, especially if you use cgroup v2. This allows Kubernetes to better manage and monitor system resources, ensuring optimal resource allocation and utilization.
 
-In essence, these preparations ensure that our VMs are not only compatible with Kubernetes but are also optimized for performance, security, and stability. Every step paves the way for a smoother Kubernetes deployment and operation. By understanding and implementing these foundational configurations, we're setting the stage for a robust and efficient Kubernetes cluster.
 
 ---
